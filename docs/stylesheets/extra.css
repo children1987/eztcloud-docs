@@ -21,6 +21,12 @@ blockquote {
   transition: all 0.2s ease;
 }
 
+/* 如果 blockquote 包含 mermaid 图表，则移除 overflow: hidden */
+blockquote:has(.mermaid),
+blockquote:has(pre.mermaid) {
+  overflow: visible;
+}
+
 /* 悬停效果 */
 blockquote:hover {
   box-shadow: 0 0.3rem 0.8rem rgba(0,0,0,.08), 0 0 0.1rem rgba(0,0,0,.15) !important;
@@ -182,4 +188,40 @@ blockquote strong {
   blockquote li {
     font-size: 0.65rem;
   }
+}
+
+/* Mermaid 图表样式保护 - 确保不受 blockquote 样式影响 */
+.mermaid,
+pre.mermaid,
+.mermaid-container,
+.mermaid-wrapper {
+  overflow: visible !important;
+  position: relative !important;
+  z-index: auto !important;
+}
+
+/* 确保 blockquote 内的 mermaid 图表不受影响 */
+blockquote .mermaid,
+blockquote pre.mermaid {
+  overflow: visible !important;
+  position: relative !important;
+  margin: 1rem -1.25rem;
+  padding: 1rem 1.25rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  transform: none;
+}
+
+blockquote .mermaid::before,
+blockquote pre.mermaid::before {
+  display: none;
+}
+
+/* 确保 mermaid 图表的 SVG 元素正常显示 */
+.mermaid svg,
+pre.mermaid svg {
+  overflow: visible !important;
+  max-width: 100%;
+  height: auto;
 }
