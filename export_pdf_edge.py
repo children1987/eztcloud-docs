@@ -63,9 +63,8 @@ def build_cover() -> str:
     date_text = datetime.now().strftime("%Y-%m-%d")
     return f"""
 <section class=\"cover\">
-  <img class=\"cover-logo\" src=\"{(DOCS_DIR / 'img' / 'logo.png').resolve().as_uri()}\" alt=\"logo\" />
+  <img class=\"cover-logo\" src=\"{(OUT_DIR / 'logo_for_pdf.png').resolve().as_uri()}\" alt=\"logo\" />
   <h1>EZtCloud 文档中心</h1>
-  <p class=\"subtitle\">客户交付版</p>
   <div class=\"meta\">
     <p><strong>文档类型：</strong>产品使用与接口文档</p>
     <p><strong>生成日期：</strong>{date_text}</p>
