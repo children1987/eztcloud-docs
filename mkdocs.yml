@@ -68,6 +68,9 @@ extra:
 extra_css:
   - stylesheets/extra.css
 
+extra_javascript:
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+
 edit_uri: https://github.com/children1987/eztcloud-docs/tree/main/docs
 
 nav:
