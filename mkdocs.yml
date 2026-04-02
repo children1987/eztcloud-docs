@@ -79,6 +79,9 @@ nav:
     - EZtCloud是什么？: EZtCloud是什么？.md
     - EZtCloud核心概念: EZtCloud核心概念.md
 
+  - 私有部署:
+    - 安装指导: 安装指导.md
+
   - 设备接入:
     - 设备联网方式: 设备联网方式.md
     - 设备接入协议: 设备接入协议.md
