@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
-set -euo pipefail
+
+# 若不是在 bash 中运行，自动切换到 bash 重启脚本
+if [ -z "${BASH_VERSION:-}" ]; then
+  exec bash "$0" "$@"
+fi
+
+set -eu
+
+# 兼容不支持 pipefail 的 shell
+if (set -o pipefail) 2>/dev/null; then
+  set -o pipefail
+fi
 
 if [ "${EUID:-$(id -u)}" -ne 0 ]; then
   echo "请使用 root 用户或 sudo 运行 setup.sh"
