@@ -21,6 +21,49 @@ blockquote {
   transition: all 0.2s ease;
 }
 
+.copy-code-wrapper {
+  position: relative;
+  margin: 1rem 0;
+}
+
+.copy-code-wrapper pre {
+  margin: 0;
+  padding-top: 2.6rem;
+}
+
+.copy-code-button {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.75rem;
+  z-index: 2;
+  border: 1px solid rgba(64, 158, 255, 0.25);
+  background: rgba(64, 158, 255, 0.08);
+  color: #409EFF;
+  border-radius: 0.45rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.copy-code-button:hover {
+  background: rgba(64, 158, 255, 0.16);
+  border-color: rgba(64, 158, 255, 0.4);
+}
+
+.copy-code-button.is-copied {
+  background: rgba(46, 125, 50, 0.12);
+  border-color: rgba(46, 125, 50, 0.25);
+  color: #2e7d32;
+}
+
+.copy-code-button.is-error {
+  background: rgba(211, 47, 47, 0.12);
+  border-color: rgba(211, 47, 47, 0.25);
+  color: #d32f2f;
+}
+
 /* 如果 blockquote 包含 mermaid 图表，则移除 overflow: hidden */
 blockquote:has(.mermaid),
 blockquote:has(pre.mermaid) {
