@@ -161,6 +161,8 @@ print(response.text)
 
 ### 设备
 
+详见[接口文档](https://api.eztcloud.com/swagger-ui/)。
+
 #### 设备属性下发
 
 **Request Syntax**
